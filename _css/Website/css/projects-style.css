@@ -1,0 +1,109 @@
+*{ 
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+   /*      HEADER  START       */
+header{
+    position: fixed;
+    width: 100%;
+}
+nav{
+    min-height: 40px;
+    width: 100%;
+    background-color: rgb(166, 166, 166);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+
+}
+
+.logo{
+    display: flex;
+    cursor: pointer;
+}
+.logo img{
+    width: 90px;
+    padding-top: 6px;
+    align-items: center;
+    justify-content: center;
+}
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul li{
+    list-style: none; 
+    padding: 0px 5px;
+    margin: 5px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+nav a{
+    color: #000;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: bold;
+}
+nav ul li a:hover{
+    background: rgb(54, 64, 98);
+    color: #fff;
+    padding: 5px;
+    transition: 0.3s;
+}
+.humburger{
+    display: none;
+    cursor: pointer;
+}
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #000;
+}
+
+@media only screen and (max-width: 700px)
+{
+    .nav-menu{
+        display: none;
+    }
+    .humburger{
+        display: block;
+    }
+    .humburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .humburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .humburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu{
+        display: block;
+        position: fixed;
+        left: -100%;
+        top: 40px;
+        gap: 0;
+        flex-direction: column;
+        background-color: rgb(166, 166, 166);
+        width: 100%;
+        text-align: center;
+        transition: 0.1s;
+    
+    }
+    .nav-item{
+        margin: 10px 0;
+    }
+    .nav-menu.active{
+        left: 0;
+    }
+}
+
+
+   /*      HEADER  END       */
